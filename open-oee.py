@@ -8,7 +8,7 @@ influxdb_username = os.getenv("InfluxdbUser")
 influxdb_password = os.getenv("InfluxdbPassword")
 
 def init():
-    client = InfluxDBClient(host=influxdb_host, port=8086, username=influxdb_username, password=influxdb_password)
+    idb = InfluxDBClient(host=influxdb_host, port=8086, username=influxdb_username, password=influxdb_password)
     print("init abgeschlossen")
 
 
