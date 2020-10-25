@@ -1,11 +1,11 @@
 from time import sleep
 
-from config import Config #Influx Login Data
+from config import Config
 
 from influxdb import InfluxDBClient
 
 #Raspberry GPIO
-import RPi.GPIO as GPIO
+import RPi.GPIO as Gpio
 
 
 
@@ -13,14 +13,12 @@ import RPi.GPIO as GPIO
 def init():
     # Connect to Database
     idb = InfluxDBClient(host=Config.influxdb_host, port=8086, username=Config.influxdb_username, password=Config.influxdb_password)
-    p = idb.ping
-    print(p)
+    
 
     #Configue GPIO Pins
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(Config.sensor_pin, GPIO.IN)
-    GPIO.add_event_detect(Config.sensor_pin, GPIO.RISING, callback=send_data_for_one_mask)
-
+    Gpio.setmode(Gpio.BCM)
+    Gpio.setup(Config.sensor_pin, Gpio.IN)
+    Gpio.add_event_detect(Config.sensor_pin, Gpio.RISING, callback=send_data_for_one_mask)
     print("init abgeschlossen")
 
 
