@@ -1,0 +1,9 @@
+*.py[cod]
+
+# Packages
+build
+bin
+var
+__pycache__
+
+venv
