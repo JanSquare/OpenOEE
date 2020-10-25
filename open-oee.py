@@ -28,7 +28,7 @@ def send_data_for_one_mask(channel):
 
 
 def main():
-    sleep(10)
+    sleep(60)
     print("main ended")
 
 if __name__ == "__main__": 
