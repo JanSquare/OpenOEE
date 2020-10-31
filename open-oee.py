@@ -18,7 +18,7 @@ def init():
     dio = 32
 
     # Register Event for I_2 
-    rpi.io.I_2.reg_event(send_data_for_one_mask, edge=revpimodio2.RISING)
+    rpi.io.I_2.reg_event(send_data_for_one_mask, edge=revpimodio2.FALLING)
     print("init complete")
 
 def send_data_for_one_mask(ioname, iovalue):
